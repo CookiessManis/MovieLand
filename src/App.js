@@ -20,6 +20,7 @@ export default function App() {
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
     const data = await response.json();
+    console.log(data);
     setMovies(data.Search);
   };
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function App() {
           src={SearchIcon}
           alt="SearchIcon"
           onClick={() => searchMovies(search)}
+          // key={search}
         />
       </div>
 
